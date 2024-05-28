@@ -1,0 +1,31 @@
+{
+  "accepter": [
+    "InstagramInitialAuth"
+  ],
+  "api_processing_error": "",
+  "api_processing_result": true,
+  "api_schema": "DPFMInstagramInitialAuthRequests",
+  "api_status_code": 200,
+  "api_type": "requests",
+  "business_partner": null,
+  "connection_key": "response",
+  "deleted": false,
+  "exconf_error": "",
+  "exconf_result": null,
+  "filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+  "message": {
+    "InstagramInitialAuth": [
+      {
+        "URL": "https://api.instagram.com/oauth/authorize?redirect_uri=https%3A%2F%2Flocalhost%3A8091%2Finstagram-account-initial-auth%2Fauth-key\u0026client_id=XXXXXXXXXXXXXX\u0026scope=user_profile\u0026response_type=code"
+      }
+    ]
+  },
+  "redis_key": "abcdefg",
+  "runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
+  "service_label": "INSTAGRAM_INITIAL_AUTH",
+  "sql_update_error": "",
+  "sql_update_result": null,
+  "subfunc_error": "",
+  "subfunc_result": null,
+  "time_stamp": "2024/05/21 15:11:24"
+}

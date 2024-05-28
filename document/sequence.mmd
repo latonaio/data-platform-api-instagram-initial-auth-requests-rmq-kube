@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant USER as ユーザー
+    participant UAGE as ユーザーエージェント<br>(ブラウザ)
+    participant APSV as アプリケーション<br>サーバー
+    participant OASV as OAuth認証<br>サーバー
+    participant RSSV as リソース<br>サーバー
+
+    OASV ->> OASV: register client ※1
+    USER ->> UAGE: request resource
+    UAGE ->> APSV: request resource
+    APSV ->> APSV: build authorization url
+    APSV -->> UAGE: authorization url
+    UAGE ->> OASV: redirect to authorization url ※2
+    OASV -->> UAGE: present approval form ※3
+    UAGE -->> USER: present approval form
+    USER ->> UAGE: approve
+    UAGE ->> OASV: post approval ※4
+    OASV -->> UAGE: autorization code
+    UAGE ->> APSV: redirect to callback url<br>autorization code
+    APSV ->> OASV: request (short) access token<br>(exchange) ※5
+    OASV -->> APSV: (short) access token ※6
+    APSV ->> OASV: request (long) access token<br> ※7
+    OASV -->> APSV: (long) access token ※8
+    APSV ->> RSSV: request resource ※9
+    RSSV -->> APSV: resource
+    APSV -->> UAGE: resource
+    UAGE -->> USER: resource
